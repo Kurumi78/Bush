@@ -1,0 +1,7 @@
+name: Bush
+version: ${project.version}
+main: com.gmail.kurumi78.bush.Bush
+api-version: 1.16
+prefix: Bush
+authors: [ Kurumi78 ]
+description: Bush
