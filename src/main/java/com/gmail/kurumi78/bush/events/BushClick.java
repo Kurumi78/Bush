@@ -22,10 +22,10 @@ public class BushClick implements Listener {
                     World world = event.getClickedBlock().getWorld();
                     Random rand = new Random();
                     int treeHeight = rand.nextInt(4) + 3;
-                    isClear(treeHeight, bushLoc);
-                    bushLoc.setY(bushLoc.getY() - treeHeight);
-                    placeTree(treeHeight, bushLoc, world);
-
+                    if(isClear(treeHeight, bushLoc)) {
+                        bushLoc.setY(bushLoc.getY() - treeHeight);
+                        placeTree(treeHeight, bushLoc, world);
+                    }
                     if (!event.getPlayer().getGameMode().equals(GameMode.CREATIVE)) {
                         ItemStack newMeal = event.getPlayer().getInventory().getItemInMainHand();
                         newMeal.setAmount(newMeal.getAmount() - 1);
