@@ -15,7 +15,7 @@ public class BushClick implements Listener {
 
     @EventHandler
     public void OnBushClick(final PlayerInteractEvent event){
-        if(!event.getClickedBlock().equals(null)) {
+        if(event.getClickedBlock() != null) {
             if (event.getClickedBlock().getType().equals(Material.DEAD_BUSH)) {
                 if (event.getPlayer().getInventory().getItemInMainHand().getType().equals(Material.BONE_MEAL)) {
                     Location bushLoc = event.getClickedBlock().getLocation();
