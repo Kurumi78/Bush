@@ -28,8 +28,12 @@ public class BushClick implements Listener {
                     }
                     if (!event.getPlayer().getGameMode().equals(GameMode.CREATIVE)) {
                         ItemStack newMeal = event.getPlayer().getInventory().getItemInMainHand();
-                        newMeal.setAmount(newMeal.getAmount() - 1);
-                        event.getPlayer().getInventory().setItemInMainHand(newMeal);
+                        if ((newMeal.getAmount-1) == 0)
+                            event.getPlayer().getInventory().setItemInMainHand(null);
+                        else {
+                            newMeal.setAmount(newMeal.getAmount() - 1);
+                            event.getPlayer().getInventory().setItemInMainHand(newMeal);
+                        }
                     }
 
                 }
